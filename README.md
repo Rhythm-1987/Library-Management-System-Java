@@ -36,6 +36,8 @@ A full-stack digital library portal for managing members, books, issue/return tr
 └── backend/
     ├── server.js            # Express entry point
     ├── package.json
+    ├── package-lock.json
+    ├── node_modules/
     ├── routes/
     │   ├── members.js       # CRUD for members
     │   ├── books.js         # CRUD for books
@@ -185,4 +187,14 @@ Dates are stored and displayed as `DD-MM-YYYY`.
 
 ## 📄 License
 
-ISC
+This project is open-source and available under the MIT License.
+
+## ✍🏼 Author
+
+Developed by Rhythm Bhojani
+
+GitHub Profile:  
+https://github.com/Rhythm-1987
+
+Repository Link:  
+https://github.com/Rhythm-1987/Library-Management-System-Java
