@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Issue Book</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <div class="sidebar">
+      <h2>Library</h2>
+      <a href="index.html">Dashboard</a>
+      <a href="add-member.html">Add Member</a>
+      <a href="view-members.html">View Members</a>
+      <a href="add-book.html">Add Book</a>
+      <a href="view-books.html">View Books</a>
+      <a href="issue-book.html">Issue Book</a>
+      <a href="return-book.html">Return Book</a>
+      <a href="issue-history.html">Issue History</a>
+      <a href="reports.html">Reports</a>
+    </div>
+
+    <div class="main">
+      <div class="page-header">
+        <h1>Issue Book</h1>
+        <span class="subtitle">Issue book to member</span>
+      </div>
+
+      <div class="card">
+        <label>Member ID</label>
+        <input
+          id="issueMid"
+          placeholder="e.g. MEM001"
+          oninput="clearError('issueMid')"
+        />
+        <span class="field-error" id="issueMid-err"></span>
+
+        <label>Book Code</label>
+        <input
+          id="issueBookCode"
+          placeholder="e.g. BOOK001"
+          oninput="clearError('issueBookCode')"
+        />
+        <span class="field-error" id="issueBookCode-err"></span>
+
+        <label>Issue Date</label>
+        <input id="issueDate" type="date" onchange="clearError('issueDate')" />
+        <span class="field-error" id="issueDate-err"></span>
+
+        <label>Expected Return Date</label>
+        <input
+          id="returnDate"
+          type="date"
+          onchange="clearError('returnDate')"
+        />
+        <span class="field-error" id="returnDate-err"></span>
+
+        <p id="issuemsg" class="form-msg"></p>
+        <button type="button" onclick="issueBook()">Issue Book</button>
+      </div>
+    </div>
+  </body>
+</html>

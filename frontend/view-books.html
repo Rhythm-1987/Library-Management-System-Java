@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+  <head>
+    <title>View Books</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <div class="sidebar">
+      <h2>Library</h2>
+      <a href="index.html">Dashboard</a>
+      <a href="add-member.html">Add Member</a>
+      <a href="view-members.html">View Members</a>
+      <a href="add-book.html">Add Book</a>
+      <a href="view-books.html">View Books</a>
+      <a href="issue-book.html">Issue Book</a>
+      <a href="return-book.html">Return Book</a>
+      <a href="issue-history.html">Issue History</a>
+      <a href="reports.html">Reports</a>
+    </div>
+
+    <div class="main">
+      <div class="page-header">
+        <h1>Books</h1>
+        <span class="subtitle">Library book records</span>
+      </div>
+
+      <div class="card">
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+          "
+        >
+          <div
+            class="search-box"
+            style="flex: 1; margin-right: 16px; margin-bottom: 0"
+          >
+            <span></span>
+            <input
+              type="text"
+              placeholder="Search by book name or code"
+              onkeyup="searchBooks(this.value)"
+            />
+          </div>
+          <button class="btn-export" onclick="exportBooksCSV()">
+            Export CSV
+          </button>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Code</th>
+              <th>Name</th>
+              <th>Author</th>
+              <th>Rack</th>
+              <th>Arrival</th>
+              <th>Available / Total</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="bookTable"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Edit Book Modal -->
+    <div class="modal-backdrop" id="bookModal">
+      <div class="modal-box">
+        <h2>Edit Book</h2>
+        <input
+          id="editBcode"
+          type="text"
+          readonly
+          style="background: #f1f5f9; color: #94a3b8"
+        />
+        <label>Book Name</label>
+        <input id="editBname" placeholder="Book Name" />
+        <label>Author</label>
+        <input id="editBauthor" placeholder="Author" />
+        <label>Rack Number</label>
+        <input id="editBrack" placeholder="Rack Number" />
+        <label>Arrival Date</label>
+        <input id="editBarrival" type="date" />
+        <label>Total Quantity</label>
+        <input id="editBqty" type="number" placeholder="Quantity" />
+        <div class="modal-actions">
+          <button onclick="saveBookEdit()"> Save</button>
+          <button class="btn-cancel" onclick="closeModal('bookModal')">
+            Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

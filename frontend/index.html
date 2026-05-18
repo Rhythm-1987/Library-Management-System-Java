@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Library System</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <div class="sidebar">
+      <h2>Library</h2>
+      <a href="index.html">Dashboard</a>
+      <a href="add-member.html">Add Member</a>
+      <a href="view-members.html">View Members</a>
+      <a href="add-book.html">Add Book</a>
+      <a href="view-books.html">View Books</a>
+      <a href="issue-book.html">Issue Book</a>
+      <a href="return-book.html">Return Book</a>
+      <a href="issue-history.html">Issue History</a>
+      <a href="reports.html">Reports</a>
+    </div>
+
+    <div class="main">
+      <h1>Dashboard</h1>
+
+      <div class="card">
+        <h3>Welcome to the Digital Library Portal</h3>
+        <p>
+          Manage library operations efficiently including member registration,
+          book stock management, issue &amp; return tracking, and transaction
+          history.
+        </p>
+      </div>
+
+      <div class="card stats-card">
+        <div class="stat-row">
+          <span>Total Members</span>
+          <span id="statMembers">0</span>
+        </div>
+        <div class="stat-row">
+          <span>Total Books</span>
+          <span id="statBooks">0</span>
+        </div>
+        <div class="stat-row">
+          <span>Issued Books</span>
+          <span id="statIssues">0</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Quick Actions</h3>
+        <button onclick="location.href = 'add-member.html'">Add Member</button>
+        <button onclick="location.href = 'add-book.html'">Add Book</button>
+        <button onclick="location.href = 'issue-book.html'">Issue Book</button>
+        <button onclick="location.href = 'issue-history.html'">
+          View Issues
+        </button>
+        <button onclick="location.href = 'return-book.html'">
+          Return Book
+        </button>
+        <button onclick="location.href = 'reports.html'">Reports</button>
+      </div>
+    </div>
+  </body>
+</html>

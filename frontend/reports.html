@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Reports</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <div class="sidebar">
+      <h2>Library</h2>
+      <a href="index.html">Dashboard</a>
+      <a href="add-member.html">Add Member</a>
+      <a href="view-members.html">View Members</a>
+      <a href="add-book.html">Add Book</a>
+      <a href="view-books.html">View Books</a>
+      <a href="issue-book.html">Issue Book</a>
+      <a href="return-book.html">Return Book</a>
+      <a href="issue-history.html">Issue History</a>
+      <a href="reports.html">Reports</a>
+    </div>
+
+    <div class="main">
+      <div class="page-header">
+        <h1>Reports</h1>
+        <span class="subtitle">Library analytics &amp; alerts</span>
+      </div>
+
+      <div class="report-grid">
+        <div class="report-stat-card">
+          <div class="report-stat-label">Total Members</div>
+          <div class="report-stat-value" id="rTotalMembers">0</div>
+        </div>
+        <div class="report-stat-card">
+          <div class="report-stat-label">Active Members</div>
+          <div class="report-stat-value" id="rActiveMembers">0</div>
+        </div>
+        <div class="report-stat-card">
+          <div class="report-stat-label">Total Books</div>
+          <div class="report-stat-value" id="rTotalBooks">0</div>
+        </div>
+        <div class="report-stat-card">
+          <div class="report-stat-label">Currently Issued</div>
+          <div class="report-stat-value" id="rIssuedBooks">0</div>
+        </div>
+        <div class="report-stat-card report-stat-card--warning">
+          <div class="report-stat-label">Overdue Books</div>
+          <div class="report-stat-value" id="rOverdue">0</div>
+        </div>
+        <div class="report-stat-card report-stat-card--green">
+          <div class="report-stat-label">Total Revenue</div>
+          <div class="report-stat-value" id="rRevenue">₹0</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3 style="margin-top: 0">
+          ⚠️ Overdue Books
+          <span style="font-size: 13px; color: #64748b; font-weight: 400"
+            >(Fine: ₹2/day)</span
+          >
+        </h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Member ID</th>
+              <th>Book</th>
+              <th>Due Date</th>
+              <th>Days Late / Fine</th>
+            </tr>
+          </thead>
+          <tbody id="overdueTable"></tbody>
+        </table>
+      </div>
+
+      <div class="card">
+        <h3 style="margin-top: 0">📅 Memberships Expiring in 30 Days</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Member ID</th>
+              <th>Name</th>
+              <th>Expiry Date</th>
+              <th>Days Left</th>
+            </tr>
+          </thead>
+          <tbody id="expiringTable"></tbody>
+        </table>
+      </div>
+
+      <div class="card">
+        <h3 style="margin-top: 0">📚 Most Issued Books (Top 5)</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Book Name</th>
+              <th>Times Issued</th>
+            </tr>
+          </thead>
+          <tbody id="popularTable"></tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>

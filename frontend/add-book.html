@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Add Book</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <div class="sidebar">
+      <h2>Library</h2>
+      <a href="index.html">Dashboard</a>
+      <a href="add-member.html">Add Member</a>
+      <a href="view-members.html">View Members</a>
+      <a href="add-book.html">Add Book</a>
+      <a href="view-books.html">View Books</a>
+      <a href="issue-book.html">Issue Book</a>
+      <a href="return-book.html">Return Book</a>
+      <a href="issue-history.html">Issue History</a>
+      <a href="reports.html">Reports</a>
+    </div>
+
+    <div class="main">
+      <div class="page-header">
+        <h1>Add Book</h1>
+        <span class="subtitle">Add new book to stock</span>
+      </div>
+
+      <div class="card">
+        <label>Book Code</label>
+        <input id="bcode" placeholder="Book Code (auto-generated)" />
+
+        <label>Book Name</label>
+        <input
+          id="bname"
+          placeholder="Book Name"
+          oninput="clearError('bname')"
+        />
+        <span class="field-error" id="bname-err"></span>
+
+        <label>Author Name</label>
+        <input
+          id="bauthor"
+          placeholder="Author Name"
+          oninput="clearError('bauthor')"
+        />
+        <span class="field-error" id="bauthor-err"></span>
+
+        <label>Rack Number</label>
+        <input
+          id="brack"
+          placeholder="Example: R1-A"
+          oninput="clearError('brack')"
+        />
+        <span class="field-error" id="brack-err"></span>
+
+        <label>Book Arrival Date</label>
+        <input id="barrival" type="date" onchange="clearError('barrival')" />
+        <span class="field-error" id="barrival-err"></span>
+
+        <label>Total Quantity</label>
+        <input
+          id="bqty"
+          type="number"
+          placeholder="Enter number of books"
+          oninput="clearError('bqty')"
+        />
+        <span class="field-error" id="bqty-err"></span>
+
+        <p id="bookmsg" class="form-msg"></p>
+        <button type="button" onclick="addBook()">Add Book</button>
+      </div>
+    </div>
+  </body>
+</html>

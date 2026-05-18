@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Add Member</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <div class="sidebar">
+      <h2>Library</h2>
+      <a href="index.html">Dashboard</a>
+      <a href="add-member.html">Add Member</a>
+      <a href="view-members.html">View Members</a>
+      <a href="add-book.html">Add Book</a>
+      <a href="view-books.html">View Books</a>
+      <a href="issue-book.html">Issue Book</a>
+      <a href="return-book.html">Return Book</a>
+      <a href="issue-history.html">Issue History</a>
+      <a href="reports.html">Reports</a>
+    </div>
+
+    <div class="main">
+      <div class="page-header">
+        <h1>Add Member</h1>
+        <span class="subtitle">Register new library member</span>
+      </div>
+
+      <div class="card">
+        <label>Member ID</label>
+        <input id="mid" placeholder="Member ID (auto-generated)" />
+
+        <label>Name</label>
+        <input
+          id="mname"
+          placeholder="Full Name"
+          oninput="clearError('mname')"
+        />
+        <span class="field-error" id="mname-err"></span>
+
+        <label>City</label>
+        <input id="maddr" placeholder="City" oninput="clearError('maddr')" />
+        <span class="field-error" id="maddr-err"></span>
+
+        <label>Membership Start Date</label>
+        <input id="missue" type="date" onchange="clearError('missue')" />
+        <span class="field-error" id="missue-err"></span>
+
+        <label>Membership Valid Till</label>
+        <input id="mexpiry" type="date" onchange="clearError('mexpiry')" />
+        <span class="field-error" id="mexpiry-err"></span>
+
+        <label>Membership Status</label>
+        <select id="mstatus">
+          <option>Active</option>
+          <option>Inactive</option>
+          <option>Blocked</option>
+        </select>
+
+        <label>Membership Type</label>
+        <select id="mtype">
+          <option>Student</option>
+          <option>Faculty</option>
+          <option>External Member</option>
+        </select>
+
+        <label>Membership Tier</label>
+        <select id="mamount">
+          <option value="100">Basic (₹100)</option>
+          <option value="300">Standard (₹300)</option>
+          <option value="500">Premium (₹500)</option>
+        </select>
+
+        <p id="membermsg" class="form-msg"></p>
+        <button type="button" onclick="addMember()">Add Member</button>
+      </div>
+    </div>
+  </body>
+</html>

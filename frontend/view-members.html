@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+  <head>
+    <title>View Members</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <div class="sidebar">
+      <h2>Library</h2>
+      <a href="index.html">Dashboard</a>
+      <a href="add-member.html">Add Member</a>
+      <a href="view-members.html">View Members</a>
+      <a href="add-book.html">Add Book</a>
+      <a href="view-books.html">View Books</a>
+      <a href="issue-book.html">Issue Book</a>
+      <a href="return-book.html">Return Book</a>
+      <a href="issue-history.html">Issue History</a>
+      <a href="reports.html">Reports</a>
+    </div>
+
+    <div class="main">
+      <div class="page-header">
+        <h1>Members</h1>
+        <span class="subtitle">Library member records</span>
+      </div>
+
+      <div class="card">
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+          "
+        >
+          <div
+            class="search-box"
+            style="flex: 1; margin-right: 16px; margin-bottom: 0"
+          >
+            <span></span>
+            <input
+              type="text"
+              placeholder="Search by ID or Name"
+              onkeyup="searchMembers(this.value)"
+            />
+          </div>
+          <button class="btn-export" onclick="exportMembersCSV()">
+             Export CSV
+          </button>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Address</th>
+              <th>Issue</th>
+              <th>Expiry</th>
+              <th>Status</th>
+              <th>Type</th>
+              <th>Amount</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="memberTable"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Edit Member Modal -->
+    <div class="modal-backdrop" id="memberModal">
+      <div class="modal-box">
+        <h2> Edit Member</h2>
+        <input
+          id="editMid"
+          type="text"
+          readonly
+          style="background: #f1f5f9; color: #94a3b8"
+        />
+        <label>Name</label>
+        <input id="editMname" placeholder="Name" />
+        <label>City</label>
+        <input id="editMaddr" placeholder="City" />
+        <label>Membership Start Date</label>
+        <input id="editMissue" type="date" />
+        <label>Membership Valid Till</label>
+        <input id="editMexpiry" type="date" />
+        <label>Status</label>
+        <select id="editMstatus">
+          <option>Active</option>
+          <option>Inactive</option>
+          <option>Blocked</option>
+        </select>
+        <label>Type</label>
+        <select id="editMtype">
+          <option>Student</option>
+          <option>Faculty</option>
+          <option>External Member</option>
+        </select>
+        <label>Membership Tier</label>
+        <select id="editMamount">
+          <option value="100">Basic (₹100)</option>
+          <option value="300">Standard (₹300)</option>
+          <option value="500">Premium (₹500)</option>
+        </select>
+        <div class="modal-actions">
+          <button onclick="saveMemberEdit()"> Save</button>
+          <button class="btn-cancel" onclick="closeModal('memberModal')">
+            Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

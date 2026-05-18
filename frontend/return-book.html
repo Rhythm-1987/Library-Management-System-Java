@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Return Book</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <div class="sidebar">
+      <h2>Library</h2>
+      <a href="index.html">Dashboard</a>
+      <a href="add-member.html">Add Member</a>
+      <a href="view-members.html">View Members</a>
+      <a href="add-book.html">Add Book</a>
+      <a href="view-books.html">View Books</a>
+      <a href="issue-book.html">Issue Book</a>
+      <a href="return-book.html">Return Book</a>
+      <a href="issue-history.html">Issue History</a>
+      <a href="reports.html">Reports</a>
+    </div>
+
+    <div class="main">
+      <div class="page-header">
+        <h1>Return Book</h1>
+        <span class="subtitle">Return issued book</span>
+      </div>
+
+      <div class="card">
+        <label>Member ID</label>
+        <input
+          id="returnMid"
+          placeholder="e.g. MEM001"
+          oninput="clearError('returnMid')"
+        />
+        <span class="field-error" id="returnMid-err"></span>
+
+        <label>Book Code</label>
+        <input
+          id="returnBookCode"
+          placeholder="e.g. BOOK001"
+          oninput="clearError('returnBookCode')"
+        />
+        <span class="field-error" id="returnBookCode-err"></span>
+
+        <p id="returnmsg" class="form-msg"></p>
+        <button type="button" onclick="returnBook()">Return Book</button>
+      </div>
+    </div>
+  </body>
+</html>

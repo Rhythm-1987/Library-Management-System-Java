@@ -1,0 +1,11 @@
+[
+  {
+    "code": "BOOK005",
+    "name": "The Hidden Hindu",
+    "author": "Akshat Gupta",
+    "rack": "R1-A",
+    "arrival": "26-03-2026",
+    "qty": 4,
+    "available": 3
+  }
+]
